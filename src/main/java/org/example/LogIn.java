@@ -4,7 +4,7 @@ public class LogIn {
 
     private String name;
     private String surename;
-    private void String(12) personID;
+    private String personID;
 
     public LogIn(){
     }
@@ -12,6 +12,11 @@ public class LogIn {
     public LogIn(String name, String surename) {
         this.name = name;
         this.surename = surename;
+    }
+    public LogIn(String name, String surename, String personID){
+        this.name = name;
+        this.surename = surename;
+        this.personID = personID;
     }
 
     public String getName() {
@@ -28,5 +33,13 @@ public class LogIn {
 
     public void setSurename(String surename) {
         this.surename = surename;
+    }
+
+    public String getPersonID() {
+        return personID;
+    }
+
+    public void setPersonID(String personID) {
+        this.personID = personID;
     }
 }
