@@ -13,7 +13,7 @@ public class UuidGenerator {
         UUID uuid = UUID.randomUUID();
         Random random = new Random();
 
-        System.out.println(sayHello.sayHello(random.nextInt()));
+        System.out.println(Uuid.uuid(random.nextInt()));
         return uuid;
     }
 }

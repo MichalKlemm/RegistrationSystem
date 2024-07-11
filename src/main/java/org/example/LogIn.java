@@ -1,22 +1,42 @@
 package org.example;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class LogIn {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
     private String name;
-    private String surename;
+
+    @Column(nullable = false)
+    private String surname;
+
+    @Column(nullable = false, unique = true)
     private String personID;
 
-    public LogIn(){
+    @Column(nullable = false, unique = true)
+    private String uuid;
+
+    public LogIn() {}
+
+    public LogIn(String name, String surname, String personID, String uuid) {
+        this.name = name;
+        this.surname = surname;
+        this.personID = personID;
+        this.uuid = uuid;
     }
 
-    public LogIn(String name, String surename) {
-        this.name = name;
-        this.surename = surename;
+    public Long getId() {
+        return id;
     }
-    public LogIn(String name, String surename, String personID){
-        this.name = name;
-        this.surename = surename;
-        this.personID = personID;
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -27,12 +47,12 @@ public class LogIn {
         this.name = name;
     }
 
-    public String getSurename() {
-        return surename;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSurename(String surename) {
-        this.surename = surename;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getPersonID() {
@@ -41,5 +61,13 @@ public class LogIn {
 
     public void setPersonID(String personID) {
         this.personID = personID;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 }
